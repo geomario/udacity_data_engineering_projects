@@ -63,6 +63,8 @@ tornado = "6.2"
 traitlets = "5.9.0"
 typing-extensions = "4.5.0"
 wcwidth = "0.2.6"
+types-psycopg2 = "^2.9.21.9"
+pandas-stubs = "^2.0.0.230412"
 
 
 [tool.poetry.group.dev.dependencies]

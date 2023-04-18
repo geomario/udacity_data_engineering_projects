@@ -1117,6 +1117,21 @@ pytz = ">=2020.1"
 test = ["hypothesis (>=5.5.3)", "pytest (>=6.0)", "pytest-xdist (>=1.31)"]
 
 [[package]]
+name = "pandas-stubs"
+version = "2.0.0.230412"
+description = "Type annotations for pandas"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "pandas_stubs-2.0.0.230412-py3-none-any.whl", hash = "sha256:311ab8b42ee574d9fea5061d1f63aeca297e472de6073ba84bf2a017c6cb1b6b"},
+    {file = "pandas_stubs-2.0.0.230412.tar.gz", hash = "sha256:016f567cb9947edd0067ea2665ab00b77fa47e73a65ce1a097de4f499b3485c0"},
+]
+
+[package.dependencies]
+types-pytz = ">=2022.1.1"
+
+[[package]]
 name = "parso"
 version = "0.8.3"
 description = "A Python Parser"
@@ -1827,6 +1842,30 @@ docs = ["myst-parser", "pydata-sphinx-theme", "sphinx"]
 test = ["argcomplete (>=2.0)", "pre-commit", "pytest", "pytest-mock"]
 
 [[package]]
+name = "types-psycopg2"
+version = "2.9.21.9"
+description = "Typing stubs for psycopg2"
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "types-psycopg2-2.9.21.9.tar.gz", hash = "sha256:388dc36a04551632289c4aaf1fc5b91e147654b165db896d094844e216f22bf5"},
+    {file = "types_psycopg2-2.9.21.9-py3-none-any.whl", hash = "sha256:0332525fb9d3031d3da46f091e7d40b2c4d4958e9c00d2b4c1eaaa9f8ef9de4e"},
+]
+
+[[package]]
+name = "types-pytz"
+version = "2023.3.0.0"
+description = "Typing stubs for pytz"
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "types-pytz-2023.3.0.0.tar.gz", hash = "sha256:ecdc70d543aaf3616a7e48631543a884f74205f284cefd6649ddf44c6a820aac"},
+    {file = "types_pytz-2023.3.0.0-py3-none-any.whl", hash = "sha256:4fc2a7fbbc315f0b6630e0b899fd6c743705abe1094d007b0e612d10da15e0f3"},
+]
+
+[[package]]
 name = "typing-extensions"
 version = "4.5.0"
 description = "Backported and Experimental Type Hints for Python 3.7+"
@@ -1874,4 +1913,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "355e4348165ff74402c7f117ba7b93ce9188cb67cb3074dc0139f85f2b9620cf"
+content-hash = "00b1be27b4182cbb9b2c8e3cd186633379cdc4bae181f6212219cf85eec2cd34"
