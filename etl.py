@@ -1,16 +1,18 @@
-import os
 import glob
-import psycopg2
+import os
+from typing import Callable
+
 import pandas as pd
+import psycopg2
+
 from sql_queries import (
-    song_table_insert,
     artist_table_insert,
+    song_select,
+    song_table_insert,
+    songplay_table_insert,
     time_table_insert,
     user_table_insert,
-    songplay_table_insert,
-    song_select,
 )
-from typing import Callable
 
 
 def process_song_file(cur: psycopg2.extensions.cursor, filepath: str) -> None:
@@ -51,18 +53,18 @@ def process_log_file(cur: psycopg2.extensions.cursor, filepath: str) -> None:
     column_labels = ("start_time", "hour", "day", "week", "month", "year", "weekday")
     time_df = pd.DataFrame.from_dict(dict(zip(column_labels, time_data)))
 
-    for i, row in time_df.iterrows():
+    for _i, row in time_df.iterrows():
         cur.execute(time_table_insert, list(row))
 
     # load user table
     user_df = df[["userId", "firstName", "lastName", "gender", "level"]]
 
     # insert user records
-    for i, row in user_df.iterrows():
+    for _i, row in user_df.iterrows():
         cur.execute(user_table_insert, row)
 
     # insert songplay records
-    for index, row in df.iterrows():
+    for _index, row in df.iterrows():
         # get songid and artistid from song and artist tables
         cur.execute(song_select, (row.song, row.artist, row.length))
         results = cur.fetchone()
